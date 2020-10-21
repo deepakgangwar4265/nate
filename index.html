@@ -5,8 +5,307 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/favicon.svg" type="image/x-icon">
     <title>Nate O'Brien</title>
-    <script src="js/jquery.js"></script>
-    <script src="js/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <style>
+        @font-face {
+  font-family: hatton;
+  src: url(fonts/Hatton-Ultralight.otf);
+}
+
+@font-face {
+  font-family: machina;
+  src: url(fonts/NeueMachina-Light.otf);
+}
+
+@font-face {
+  font-family: nunito;
+  src: url(fonts/Nunito-Light.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: nunito;
+}
+
+::-moz-selection {
+  background-color: #202020;
+  color: #eaeaea;
+}
+
+::selection {
+  background-color: #202020;
+  color: #eaeaea;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #202020;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.layout {
+  width: 100%;
+  padding: 0 100px;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-family: hatton;
+  font-smooth: antialiased;
+  font-size: 174px;
+  font-weight: lighter;
+  position: relative;
+  top: 50vh;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-family: hatton;
+  font-smooth: antialiased;
+  font-size: 108px;
+  font-weight: lighter;
+  position: relative;
+  top: 50vh;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+a {
+  color: inherit;
+}
+
+.credits {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.credits * {
+  width: 100%;
+  text-align: center;
+}
+
+.hero {
+  height: 120vh;
+}
+
+.header {
+  width: 83%;
+  text-align: center;
+}
+
+.hero-img {
+  width: 300px;
+  display: inline-block;
+  height: auto;
+  margin-top: 70px;
+  -webkit-user-drag: none;
+  z-index: -1;
+}
+
+.header-newsletter {
+  position: absolute;
+  top: 65vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: 200px;
+  width: 136px;
+  height: 136px;
+  text-align: center;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-smooth: antialiased;
+  border-radius: 50%;
+  background: #c94d1c;
+  -webkit-box-shadow: 3px 7px 10px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 3px 7px 10px 10px rgba(0, 0, 0, 0.05);
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.script-name {
+  width: 120px;
+  margin-left: 50px;
+  position: absolute;
+  top: 57vh;
+}
+
+.side-img {
+  position: absolute;
+  right: 255px;
+  top: 50vh;
+  width: 120px;
+  height: auto;
+}
+
+.side-img img {
+  width: 120px;
+  height: auto;
+}
+
+.section-about {
+  height: 160vh;
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about-img {
+  width: 400px;
+  height: 430px;
+  position: relative;
+  top: 300px;
+  margin-left: 70px;
+  background: #ffffff;
+}
+
+.about-img img {
+  width: 400px;
+  height: auto;
+}
+
+.about-content {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  top: 320px;
+  margin-left: 150px;
+  border-top: 1px solid #202020;
+  border-bottom: 1px solid #202020;
+  font-family: nunito;
+  font-size: 16px;
+}
+
+.about-content p {
+  margin: 8px 0;
+}
+
+.about-wrapper {
+  width: 130%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: -50px;
+}
+
+.about-wrapper .line {
+  width: 80%;
+  height: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-wrapper .line span {
+  position: absolute;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.about-wrapper .line2 {
+  width: 80%;
+  height: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-wrapper .line2 span {
+  position: absolute;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.about-wrapper .line3 {
+  width: 80%;
+  height: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-wrapper .line3 span {
+  position: absolute;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.heading-articles {
+  margin-top: -30px;
+  margin-left: 160px;
+}
+
+.btn-blog-wrapper {
+  width: 80%;
+  text-align: center;
+  position: relative;
+  top: 80vh;
+}
+
+.btn-blog {
+  background: #c94d1c;
+  color: #ffffff;
+  font-size: 25.9px;
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: lighter;
+}
+
+.btn-blog:hover {
+  background: #d85b30;
+}
+/*# sourceMappingURL=styles.css.map */
+    </style>
 </head>
 <body>
     <div class="js-scroll">
@@ -109,6 +408,217 @@
             </div>
         </div>  
     </div>
-    <script src="js/smoothscroll.js"></script>
+    <script>
+                        var SmoothScroll = function(args){
+	if (!args) args = {};
+
+	var _self = this;
+	
+	this.ui = {
+		el: document.querySelector('.js-scroll'),
+		heightEl: null      
+	}
+	
+	this.state = {
+		scroll: {
+			target: 0,
+			current: 0,
+			ease: 0.055
+		},
+		bounds: {
+			scrollHeight: 0
+		},
+		isResizing: false
+	}
+   
+
+	this.init = function(){
+		this.bindAll();
+		this.setInitial();
+		this.setFakeHeight();
+		this.addListeners();
+	}
+
+	this.bindAll = function(){
+		['onScroll', 'onResize', 'render'].forEach(function (fn) {
+			return _self[fn] = _self[fn].bind(_self);
+		});
+	}
+
+	this.render = function(){
+		var scroll = this.state.scroll;
+
+
+		scroll.current += (scroll.target - scroll.current) * scroll.ease;
+		if (scroll.current < .1) scroll.current = 0;
+
+		this.translateContainer();
+	}
+
+	this.translateContainer = function() {
+		var _state = this.state;
+		var isResizing = _state.isResizing;
+		var scroll = _state.scroll;
+
+		var translate = "translate3d(0, " + -scroll.current + "px, 0)";
+
+		_self.ui.el.style.transform = translate;
+	}
+
+	this.setInitial = function(){
+		var el = this.ui.el;
+
+		Object.assign(el.style, {
+			position: 'fixed',
+			top: 0,
+			left: 0,
+			width: '100%'
+		});
+
+		document.body.classList.add('is-smooth-scroll');
+	}
+
+	this.setFakeHeight = function(){
+		var _state = this.state;
+		var bounds = _state.bounds;
+
+
+		if (!this.ui.heightEl) {
+			this.ui.heightEl = document.createElement('div');
+			this.ui.heightEl.classList.add('js-fake-scroll');
+			document.body.appendChild(this.ui.heightEl);
+		}
+
+		var bottom = _self.ui.el.getBoundingClientRect().height;
+
+		bounds.scrollHeight = bottom;
+
+		this.ui.heightEl.style.height = bottom + 'px';
+	}
+
+	this.onScroll = function(){
+		var scroll = this.state.scroll;
+		scroll.target = window.scrollY;
+	}
+
+	this.onResize = function(){
+		this.state.isResizing = true;
+
+		this.setFakeHeight();
+		this.translateContainer();
+
+		this.state.isResizing = false;
+	}
+
+	this.addListeners = function(){
+		window.addEventListener('scroll', this.onScroll);
+		window.addEventListener('resize', this.onResize);
+	}
+
+}
+
+
+var RAF = {
+    els: [],
+    add: function(object) {
+    	this.els.push(object);
+        object.init();
+    },
+    remove: function(object) {
+    	var idx = this.els.indexOf(object);
+    	this.els.splice(idx, 1);
+    },
+    init: function() {
+        this.animate();
+    },
+    animate: function() {
+        requestAnimationFrame(RAF.animate);
+        RAF.render();
+    },
+    render: function() {
+        for (var i = 0; i < RAF.els.length; i++) {
+            RAF.els[i].render();
+        }
+    }
+}
+
+
+
+var PageSmoothScroll = new SmoothScroll();
+
+RAF.init();
+RAF.add(PageSmoothScroll);
+
+
+//to check if an element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+
+const textrev = gsap.timeline();
+
+textrev.from(".line span", {
+	duration: 2,
+	y: 200,
+	ease: "power4.out",
+	delay: 3,
+	skewY: 10,
+	stagger: {
+		amount: 0.4,
+	},
+});
+
+const textrev2 = gsap.timeline();
+
+textrev2.from(".line2 span", {
+	duration: 2,
+	y: 200,
+	ease: "power4.out",
+	delay: 3.6,
+	skewY: 10,
+	stagger: {
+	amount: 0.4,
+	},
+});
+
+const textrev3 = gsap.timeline();
+
+textrev3.from(".line3 span", {
+	duration: 2,
+	y: 200,
+	ease: "power4.out",
+	delay: 4.4,
+	skewY: 10,
+	stagger: {
+	amount: 0.4,
+	},
+});
+
+$(window).scroll(function() {
+	var off = $(window).scrollTop();
+	off *= 0.2;
+	gsap.to('.side-img', {
+	  ease: "linear.out", transform: 'translateY(-'+off+'px)'
+	});
+});
+// const para1 = document.querySelector('#para1');
+
+// document.addEventListener('scroll', function () {
+// 	if(isInViewport(para1)) {
+		
+// };
+// }, {
+// 	passive: true
+// });
+  
+  
+    </script>                    
 </body>
 </html>
