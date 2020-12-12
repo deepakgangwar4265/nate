@@ -2,118 +2,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="img/favicon.svg" type="image/x-icon">
     <title>Nate O'Brien</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <style>
-        @font-face{font-family:hatton;src:url(fonts/Hatton-Ultralight.otf)}@font-face{font-family:machina;src:url(fonts/NeueMachina-Light.otf)}@font-face{font-family:nunito;src:url(fonts/Nunito-Light.ttf)}*{margin:0;padding:0;font-family:nunito}::-moz-selection{background-color:#202020;color:#eaeaea}::selection{background-color:#202020;color:#eaeaea}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{border-radius:10px;background:#fff}::-webkit-scrollbar-thumb{border-radius:10px;background:#202020}.section{position:relative;width:100%;height:100vh}.layout{width:100%;padding:0 100px}h1{margin:0;padding:0;font-family:hatton;font-smooth:antialiased;font-size:174px;font-weight:lighter;position:relative;top:50vh;-webkit-transform:translateY(-50%);transform:translateY(-50%)}h2{margin:0;padding:0;font-family:hatton;font-smooth:antialiased;font-size:108px;font-weight:lighter;position:relative;top:50vh;-webkit-transform:translateY(-50%);transform:translateY(-50%)}a{color:inherit}.credits{position:absolute;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap}.credits *{width:100%;text-align:center}.hero{height:120vh}.header{width:83%;text-align:center}.hero-img{width:300px;display:inline-block;height:auto;margin-top:70px;-webkit-user-drag:none;z-index:-1}.header-newsletter{position:absolute;top:65vh;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;right:200px;width:136px;height:136px;text-align:center;color:#fff;font-family:sans-serif;font-weight:lighter;font-smooth:antialiased;border-radius:50%;background:#c94d1c;-webkit-box-shadow:3px 7px 10px 10px rgba(0,0,0,.05);box-shadow:3px 7px 10px 10px rgba(0,0,0,.05);-webkit-transform:rotate(10deg);transform:rotate(10deg)}.script-name{width:120px;margin-left:50px;position:absolute;top:57vh}.side-img{position:absolute;right:255px;top:50vh;width:120px;height:auto}.side-img img{width:120px;height:auto}.section-about{height:160vh}.about{display:-webkit-box;display:-ms-flexbox;display:flex}.about-img{width:400px;height:430px;position:relative;top:300px;margin-left:70px;background:#fff}.about-img img{width:400px;height:auto}.about-content{width:400px;height:400px;position:relative;top:320px;margin-left:150px;border-top:1px solid #202020;border-bottom:1px solid #202020;font-family:nunito;font-size:16px}.about-content p{margin:8px 0}.about-wrapper{width:130%;height:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-left:-50px}.about-wrapper .line{width:80%;height:22px;position:relative;overflow:hidden}.about-wrapper .line span{position:absolute;font-size:16px;line-height:16px}.about-wrapper .line2{width:80%;height:22px;position:relative;overflow:hidden}.about-wrapper .line2 span{position:absolute;font-size:16px;line-height:16px}.about-wrapper .line3{width:80%;height:22px;position:relative;overflow:hidden}.about-wrapper .line3 span{position:absolute;font-size:16px;line-height:16px}.heading-articles{margin-top:-30px;margin-left:160px}.btn-blog-wrapper{width:80%;text-align:center;position:relative;top:80vh}.btn-blog{background:#c94d1c;color:#fff;font-size:25.9px;display:inline-block;padding:10px 30px;font-weight:lighter}.btn-blog:hover{background:#d85b30}
-    </style>
+    <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+    <script src="js/locomotive-scroll-min.js"></script>
+    <link href="css/locomotive-scroll.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="js-scroll">
-        <div class="layout">
-            <div class="section hero">
-                <h1>NATE O'BRIEN</h1>
-                <div class="header">
-                    <img src="img/hero.png" alt="Nate" class="hero-img">
-                </div>
-                <div class="header-newsletter">
-                    GET THE <br>
-                    NEWSLETTER
-                </div>
+    <div data-scroll-container>
+        <nav data-scroll-section>
+            <ul>
+                <li>Home</li>
+            </ul>
+            <ul>
+                <li>Blog</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <div class="header" data-scroll-section>
+            <div class="heading">
+                <h1 data-scroll data-scroll-speed="-1">NATE O'BRIEN</h1>
+                <img src="img/hero.png" alt="Nate" class="hero-img">
             </div>
-            <div class="section section-about">
-                <div class="side-img">
-                    <img src="img/side-8.png" alt="">
-                </div>
-                <h2>ABOUT</h2>
-                <img src="img/script.svg" alt="" class="script-name">
-                <div class="about">
-                    <div class="about-img">
-                        <img src="img/about1.png" alt="About-Nate">
-                    </div>
-                    <div class="about-content">
-                        <div class="about-wrapper" id="para1">
-                            <p>
-                                <div class="line">
-                                    <span>Nate O’Brien is an American investor, enterpreneur, and</span>
-                                </div>
-                                <div class="line">
-                                    <span>internet personality. He is best known for his personal </span>
-                                </div>
-                                <div class="line">
-                                    <span>finance and lifestyle YouTube channel which has </span>
-                                </div>
-                                <div class="line">
-                                    <span>amassed 650,000+ subscribers and more than 30 </span>
-                                </div>
-                                <div class="line">
-                                    <span>million views</span>
-                                </div> 
-                            </p>
-                        </div>
-                        <div class="about-wrapper" id="para2">
-                            <p id="para2">
-                                <div class="line2">
-                                    <span>In recent years, Nate has set out on a journey to help </span>
-                                </div>
-                                <div class="line2">
-                                    <span>millions of others achieve financial success. In 2020, </span>
-                                </div>
-                                <div class="line2">
-                                    <span>Nate was recognized as one of the top nine Millenial </span>
-                                </div>
-                                <div class="line2">
-                                    <span>YouTube channels by Forbes.</span>
-                                </div>
-                            </p>
-                        </div>
-                        <div class="about-wrapper" id="para3">
-                            <p>
-                                <div class="line3">
-                                    <span>From the start, Nate has been determined to provider </span>
-                                </div>
-                                <div class="line3">
-                                    <span>free content, no frills, no upsells, 100% free. Join </span>
-                                </div>
-                                <div class="line3">
-                                    <span>thousands of others in our journey towards financial </span>
-                                </div>
-                                <div class="line3">
-                                    <span>freedom.</span>
-                                </div>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="header-newsletter" data-scroll data-scroll-speed="1">
+                <!-- Get the <br>
+                Newsletter -->
+                <a class="nate-menu-link" href="#" target="_blank" data-magnetic>
+                    <span class="nate-menu-link-text"><span data-text="Get the">Get the</span></span>
+                </a>
+                <a class="nate-menu-link" href="#" target="_blank" data-magnetic>
+                    <span class="nate-menu-link-text"><span data-text="Newsletter">Newsletter</span></span>
+                </a>
             </div>
-            <div class="section">
-                <h2>POPULAR</h2>
-                <br>
-                <h2 class="heading-articles">ARTICLES</h2>
-                <div class="btn-blog-wrapper">
-                    <div class="btn-blog">
-                        Read the Blog
+        </div>
+        <section data-scroll-section class="about">
+            <div class="about-content">
+                <div class="about-content-left">
+                    <div>
+                        <h2>ABOUT</h2>
+                    <img src="img/script.svg" alt="" class="script-name">
+                    </div>
+                    
+                    <img src="img/about1.png" alt="nate o brien" class="about-content-image1" data-scroll data-scroll-speed="2">
+                </div>
+                <div class="about-content-right">
+                    <img src="img/side-8.png" alt="" class="about-content-image2" data-scroll data-scroll-speed="2">
+                    <div class="about-wrapper" id="para1">
+                        <p>
+                            <div class="line">
+                                <span>Nate O’Brien is an American investor, enterpreneur, and</span>
+                            </div>
+                            <div class="line">
+                                <span>internet personality. He is best known for his personal </span>
+                            </div>
+                            <div class="line">
+                                <span>finance and lifestyle YouTube channel which has </span>
+                            </div>
+                            <div class="line">
+                                <span>amassed 650,000+ subscribers and more than 30 </span>
+                            </div>
+                            <div class="line">
+                                <span>million views</span>
+                            </div> 
+                        </p>
+                    </div>
+                    <div class="about-wrapper" id="para2">
+                        <p id="para2">
+                            <div class="line2">
+                                <span>In recent years, Nate has set out on a journey to help </span>
+                            </div>
+                            <div class="line2">
+                                <span>millions of others achieve financial success. In 2020, </span>
+                            </div>
+                            <div class="line2">
+                                <span>Nate was recognized as one of the top nine Millenial </span>
+                            </div>
+                            <div class="line2">
+                                <span>YouTube channels by Forbes.</span>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="about-wrapper" id="para3">
+                        <p>
+                            <div class="line3">
+                                <span>From the start, Nate has been determined to provider </span>
+                            </div>
+                            <div class="line3">
+                                <span>free content, no frills, no upsells, 100% free. Join </span>
+                            </div>
+                            <div class="line3">
+                                <span>thousands of others in our journey towards financial </span>
+                            </div>
+                            <div class="line3">
+                                <span>freedom.</span>
+                            </div>
+                        </p>
                     </div>
                 </div>
                 
             </div>
-            <div class="section"></div>
-            <div class="section"></div>
-            <div class="section"></div>
-            <div class="section">
-                <div class="credits">
-                    <h1>Based on Jesper Landberg original pen</h1>
-                    <h2>Kudos to <a href="href="https://codepen.io/ReGGae" target="_blank"> Jesper!</a></h2>
-                    <a href="https://codepen.io/ReGGae/pen/gNaqvB" target="_blank">Smooth scroll with split sections WIP</a>
+            
+        </section>
+        <section data-scroll-section class="categories">
+            <p>HE ALSO TALKS ABOUT SOME OTHER GOOD THINGS</p>
+            <div class="categories-item">
+                <h3>Millenials</h3>
+            </div>
+            <div class="categories-item">
+                <h3>Money</h3>
+                <div class="categories-image">
+
+                </div>
+                <h3>Reading</h3>
+            </div>
+            <div class="categories-item">
+                <div class="categories-image">
+                    
+                </div>
+                <h3>Minimalist Life</h3>
+            </div>
+            <div class="categories-item">
+                <h3>Investing in Yourself</h3>
+                <div class="categories-image">
+                    
                 </div>
             </div>
-        </div>  
+            <div class="categories-item">
+                <h3>Journal &</h3>
+                <div class="categories-image">
+                    
+                </div>
+                <h3>Books</h3>
+            </div>
+            <div class="categories-item">
+                <h3>Passive Income</h3>
+            </div>
+        </section>
+        <section data-scroll-section class="articles">
+            <div>
+                <h2>POPULAR</h2>
+            <br>
+            <h2>ARTICLES</h2>
+            </div>
+            <div class="accordian">
+                <div class="accordian-item">
+                    <p>How to Invest in Stocks: A Step-by-Step Guide</p>
+                    <p class="read-more-plus">+</p>
+                </div>
+                <div class="accordian-item">
+                    <p>How to Stop Living Paycheck to Paycheck</p>
+                    <p class="read-more-plus">+</p>
+                </div>
+                <div class="accordian-item">
+                    <p>9 Smartest Purchases in My 20's</p>
+                    <p class="read-more-plus">+</p>
+                </div>
+            </div>
+            <button class="blog-button">
+                <p>Read the Blog</p>
+            </button>
+        </section>
+        <section data-scroll-section class="videos">
+            <div>
+                <h2>TOP VIDEOS</h2>
+            </div>
+        </section>
+        <section data-scroll-section class="newsletter">
+            <div class="newsletter-heading">
+                <h2>NEWSLETTER</h2>
+            </div>
+            <div class="newsletter-content">
+                <p>Want weekely finance tips from Nate</p>
+                <form action="">
+                    <input class="email" type="text" name="" id="" value="Your email">
+                    <input class="submit" type="submit" name="" id="" value="&rarr;">
+                </form>
+            </div>
+
+        </section>
+        <footer data-scroll-section data-scroll-sticky>
+            <h2>NATE</h2>
+            <h2>O'BRIEN</h2>
+            <img data-scroll data-scroll-speed="3" lerp="0.9" src="img/footer-arrow.svg" alt="" class="footer-arrow">
+            <div class="footer-links">
+              <div>
+                <ul>
+                  <li>Other</li>
+                  <li>Disclaimer</li>
+                  <li>Privacy Policy</li>
+                  <li>Terms of use</li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <li>Links</li>
+                  <li>Home</li>
+                  <li>Blog</li>
+                  <li>Contact</li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <li>Socials</li>
+                  <li>YouTube</li>
+                  <li>Twitter</li>
+                  <li>Instagram</li>
+                  <li>LinkedIn</li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <p>Copyright &copy; 2020 ORB Media LLC&nbsp;&nbsp; |&nbsp; &nbsp;All Rights Reserved</p>
+              <br>
+              <p>Site Designed and Developed by Deepak Gangwar</p>
+            </div>
+          </footer>
     </div>
     <script>
-       var SmoothScroll=function(t){t||(t={});var e=this;this.ui={el:document.querySelector(".js-scroll"),heightEl:null},this.state={scroll:{target:0,current:0,ease:.055},bounds:{scrollHeight:0},isResizing:!1},this.init=function(){this.bindAll(),this.setInitial(),this.setFakeHeight(),this.addListeners()},this.bindAll=function(){["onScroll","onResize","render"].forEach(function(t){return e[t]=e[t].bind(e)})},this.render=function(){var t=this.state.scroll;t.current+=(t.target-t.current)*t.ease,t.current<.1&&(t.current=0),this.translateContainer()},this.translateContainer=function(){var t=this.state,i=(t.isResizing,"translate3d(0, "+-t.scroll.current+"px, 0)");e.ui.el.style.transform=i},this.setInitial=function(){var t=this.ui.el;Object.assign(t.style,{position:"fixed",top:0,left:0,width:"100%"}),document.body.classList.add("is-smooth-scroll")},this.setFakeHeight=function(){var t=this.state.bounds;this.ui.heightEl||(this.ui.heightEl=document.createElement("div"),this.ui.heightEl.classList.add("js-fake-scroll"),document.body.appendChild(this.ui.heightEl));var i=e.ui.el.getBoundingClientRect().height;t.scrollHeight=i,this.ui.heightEl.style.height=i+"px"},this.onScroll=function(){this.state.scroll.target=window.scrollY},this.onResize=function(){this.state.isResizing=!0,this.setFakeHeight(),this.translateContainer(),this.state.isResizing=!1},this.addListeners=function(){window.addEventListener("scroll",this.onScroll),window.addEventListener("resize",this.onResize)}},RAF={els:[],add:function(t){this.els.push(t),t.init()},remove:function(t){var e=this.els.indexOf(t);this.els.splice(e,1)},init:function(){this.animate()},animate:function(){requestAnimationFrame(RAF.animate),RAF.render()},render:function(){for(var t=0;t<RAF.els.length;t++)RAF.els[t].render()}},PageSmoothScroll=new SmoothScroll;function isInViewport(t){const e=t.getBoundingClientRect();return e.top>=0&&e.left>=0&&e.bottom<=(window.innerHeight||document.documentElement.clientHeight)&&e.right<=(window.innerWidth||document.documentElement.clientWidth)}RAF.init(),RAF.add(PageSmoothScroll);const textrev=gsap.timeline();textrev.from(".line span",{duration:2,y:200,ease:"power4.out",delay:3,skewY:10,stagger:{amount:.4}});const textrev2=gsap.timeline();textrev2.from(".line2 span",{duration:2,y:200,ease:"power4.out",delay:3.6,skewY:10,stagger:{amount:.4}});const textrev3=gsap.timeline();textrev3.from(".line3 span",{duration:2,y:200,ease:"power4.out",delay:4.4,skewY:10,stagger:{amount:.4}}),$(window).scroll(function(){var t=$(window).scrollTop();t*=.2,gsap.to(".side-img",{ease:"linear.out",transform:"translateY(-"+t+"px)"})});
-    </script>                    
+        (function () {
+            var scroll = new LocomotiveScroll();
+        })();
+
+        const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+});
+    </script>
+
 </body>
 </html>
